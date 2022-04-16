@@ -1,23 +1,69 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<!--pages/index/index.wxml-->
+<view class="indexContainer">
+    <swiper class="benners" indicator-dots	indicator-active-color="white" 	autoplay="true"  circular="true">
+        <swiper-item>
+            <image src="/nvsheng.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/nvsheng.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/nvsheng.jpg"></image>
+        </swiper-item>
+    </swiper>
+    <view class="navCntainer">
+        <view class="navItem">
+            <text class="iconfont icon-pinglun1"></text>
+            <text>每日推荐</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-icon"></text>
+            <text>歌单</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-xiazai"></text>
+            <text>排行榜</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-pinglun"></text>
+            <text>电台</text>
+        </view>
+        <view class="navItem">
+            <text class="iconfont icon-pinglun1"></text>
+            <text>直播</text>
+        </view>      
+    </view>
+    <view class="reconmendContent">
+            <view class="header">
+                <text class="title">推荐歌曲</text>
+
+                <view>
+                    <text class="tuijian">为你精心推荐</text>
+                    <text class="more">查看更多</text>
+                </view>
+            </view>
+    </view>
+    <scroll-view class="reconmendScroll" enable-flex="true" scroll-x="true">
+        <view class="scrollItem">
+            <image src="/nvsheng.jpg"></image>
+            <text>我喜欢她，她也喜欢我</text>
+        </view>
+        <view class="scrollItem">
+            <image src="/nvsheng.jpg"></image>
+            <text>我喜欢她，她也喜欢我,但是她得不到我，气不气</text>
+        </view>
+        <view class="scrollItem">
+            <image src="/nvsheng.jpg"></image>
+            <text>我喜欢她，她也喜欢我</text>
+        </view>
+        <view class="scrollItem">
+            <image src="/nvsheng.jpg"></image>
+            <text>我喜欢她，她也喜欢我</text>
+        </view>
+        <view class="scrollItem">
+            <image src="/nvsheng.jpg"></image>
+            <text>我喜欢她，她也喜欢我</text>
+        </view>
+    </scroll-view>
+    
 </view>
