@@ -1,4 +1,5 @@
 // pages/index/index.js
+import requests from '../../utils/requests'
 Page({
 
     /**
@@ -11,8 +12,23 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
+    onLoad: async function (options) {
+        // wx.request({
+        //     url: 'http://localhost:3000/banner',
+        //     data: {type: 2},
+        //     success: (res) => {
+        //       console.log("成功:", res)
+        //     },
+        //     fail: (err)=> {
+        //       console.log("失败:", err)
+        //     }
+        //   })
+        let bannerListData = await requests('/banner',{type: 2})
+        let personalized = await requests('/personalized', {limitt: 10})
+        this.setData({
+            bannerListData:bannerListData.banners,
+            personalizedData:personalized.result
+        })
     },
 
     /**

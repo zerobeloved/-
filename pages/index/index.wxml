@@ -1,15 +1,10 @@
 <!--pages/index/index.wxml-->
 <view class="indexContainer">
     <swiper class="benners" indicator-dots	indicator-active-color="white" 	autoplay="true"  circular="true">
-        <swiper-item>
-            <image src="/nvsheng.jpg"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/nvsheng.jpg"></image>
-        </swiper-item>
-        <swiper-item>
-            <image src="/nvsheng.jpg"></image>
-        </swiper-item>
+    <swiper-item wx:for="{{bannerListData}}" wx:key="targetId">
+        <image src="{{item.pic}}"></image>
+    </swiper-item>
+       
     </swiper>
     <view class="navCntainer">
         <view class="navItem">
@@ -44,25 +39,9 @@
             </view>
     </view>
     <scroll-view class="reconmendScroll" enable-flex="true" scroll-x="true">
-        <view class="scrollItem">
-            <image src="/nvsheng.jpg"></image>
-            <text>我喜欢她，她也喜欢我</text>
-        </view>
-        <view class="scrollItem">
-            <image src="/nvsheng.jpg"></image>
-            <text>我喜欢她，她也喜欢我,但是她得不到我，气不气</text>
-        </view>
-        <view class="scrollItem">
-            <image src="/nvsheng.jpg"></image>
-            <text>我喜欢她，她也喜欢我</text>
-        </view>
-        <view class="scrollItem">
-            <image src="/nvsheng.jpg"></image>
-            <text>我喜欢她，她也喜欢我</text>
-        </view>
-        <view class="scrollItem">
-            <image src="/nvsheng.jpg"></image>
-            <text>我喜欢她，她也喜欢我</text>
+        <view class="scrollItem" wx:for="{{personalizedData}}" wx:key="id" wx:for-item="reconmendItem">
+            <image src="{{reconmendItem.picUrl}}"></image>
+            <text>{{reconmendItem.name}}</text>
         </view>
     </scroll-view>
     

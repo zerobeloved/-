@@ -2,12 +2,14 @@
 
 .banners{
     width:100%;
-    height: 300rpx;
+    height: 100vh;
 }
 
 .benners image{
     width: 100%;
     height: 100%;
+    /* border-radius: 40rpx; */
+    /* padding-left: 30rpx; */
 }
 
 .navCntainer{
